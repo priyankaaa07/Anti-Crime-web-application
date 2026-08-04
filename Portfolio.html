@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <header class="header" style="
+        background: linear-gradient(135deg, #1e7f83 0%, #2c3e50 100%);
+        padding: 15px 0;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    ">
+        <div class="container-fluid" style="
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+            <div class="logo pull-left1" style="float: left;">
+                <h1 style="margin: 0; font-size: 24px; font-weight: 700;">
+                     <a href="index.html" style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+                        <!-- <i class="fas fa-hands-helping" style="margin-right: 10px; color: #f39c12;"></i>  -->
+                       
+                    </a>  
+                    दर्शनिक यात्रा / Darshanik Yatra
+                </h1>
+            </div>
+
+            <nav id="nav-menu-container" style="display: flex;">
+                <ul class="nav-menu" style="
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                ">
+                    <li class="menu-active" style="margin: 0 15px; position: relative;">
+                        <a href="index.html" style="
+                            color: #f39c12;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            border-bottom: 2px solid #f39c12;
+                        ">
+                            <i class="fas fa-home" style="margin-right: 5px;"></i>Home
+                        </a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="about.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-info-circle" style="margin-right: 5px;"></i>About</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="service.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-concierge-bell" style="margin-right: 5px;"></i>Services</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="portfolio.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Showcase</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="price.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-tag" style="margin-right: 5px;"></i>Official Links</a>
+                    </li>
+                    <li class="menu-has-children" style="margin: 0 15px; position: relative;">
+                        <a href="#" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        ">
+                            <i class="fas fa-caret-down" style="margin-right: 5px;"></i>Dropdown
+                        </a>
+                        <ul style="
+                            position: absolute;
+                            background: white;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                            border-radius: 5px;
+                            padding: 10px 0;
+                            width: 200px;
+                            top: 100%;
+                            left: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateY(10px);
+                            transition: all 0.3s ease;
+                            z-index: 1000;
+                            list-style: none;
+                        ">
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                        </ul>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="contact.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-envelope" style="margin-right: 5px;"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <div style="padding: 20px; max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h2>Jan Saathi Website Content</h2>
+        <p>This is a demonstration of the improved header with inline styling. The rest of your page content would go here.</p>
+        <p>Note: The dropdown menu functionality requires JavaScript to work properly. The hover effect is not functional with inline styles alone.</p>
+    </div> -->
+
+    <script>
+        // Simple JavaScript to handle dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.menu-has-children');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '1';
+                    ul.style.visibility = 'visible';
+                    ul.style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '0';
+                    ul.style.visibility = 'hidden';
+                    ul.style.transform = 'translateY(10px)';
+                });
+            });
+            
+            // Add hover effect for menu items
+            const menuItems = document.querySelectorAll('.nav-menu a');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#f39c12';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#fff';
+                    }
+                });
+            });
+        });
+    </script>
+   <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #050d1a;
+    --navy2:   #0b1829;
+    --navy3:   #0f2240;
+    --blue:    #1a6fff;
+    --blue-lt: #4d94ff;
+    --cyan:    #00d4ff;
+    --white:   #f0f6ff;
+    --muted:   #7a9abf;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(26,111,255,0.25);
+    --scan-h:  2px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── animated grid background ── */
+  .showcase {
+    position: relative;
+    padding: 100px 8% 90px;
+    background:
+      linear-gradient(rgba(26,111,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26,111,255,0.04) 1px, transparent 1px),
+      var(--navy);
+    background-size: 48px 48px;
+    overflow: hidden;
+  }
+
+  /* ── scan-line: the signature ── */
+  .showcase::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: var(--scan-h);
+    background: linear-gradient(90deg, transparent 0%, var(--cyan) 40%, var(--blue) 60%, transparent 100%);
+    animation: scan 4s ease-in-out infinite;
+    opacity: 0.85;
+    z-index: 2;
+  }
+
+  @keyframes scan {
+    0%   { top: -4px; opacity: 0; }
+    10%  { opacity: 0.85; }
+    90%  { opacity: 0.85; }
+    100% { top: calc(100% + 4px); opacity: 0; }
+  }
+
+  /* radial glow behind hero text */
+  .showcase::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, #0056b3 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── eyebrow ── */
+  .eyebrow {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1.5px;
+    background: var(--cyan);
+  }
+
+  /* ── hero heading ── */
+  .hero-heading {
+    position: relative;
+    z-index: 1;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .hero-heading span {
+    background: linear-gradient(120deg, var(--blue-lt), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    position: relative;
+    z-index: 1;
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.7;
+    margin: 0 auto 70px;
+  }
+
+  /* ── card grid ── */
+  .card-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 32px 28px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(.22,.68,0,1.2),
+                border-color 0.3s,
+                box-shadow 0.35s;
+    backdrop-filter: blur(6px);
+  }
+
+  /* corner accent line */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40px; height: 2px;
+    background: var(--blue);
+    border-radius: 0 0 2px 0;
+    transition: width 0.4s cubic-bezier(.22,.68,0,1.2), background 0.3s;
+  }
+
+  /* inner glow on hover */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(26,111,255,0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(26,111,255,0.6);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(26,111,255,0.15);
+  }
+
+  .card:hover::before { width: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+  .card:hover::after  { opacity: 1; }
+
+  .card-icon {
+    font-size: 36px;
+    margin-bottom: 18px;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(26,111,255,0.5));
+    transition: transform 0.3s;
+  }
+
+  .card:hover .card-icon { transform: scale(1.15); }
+
+  .card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-lt);
+    margin-bottom: 8px;
+  }
+
+  .card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── divider ── */
+  .section-divider {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 70px 0 50px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #0056b3, transparent);
+  }
+
+  .section-divider span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── stats ── */
+  .stats-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .stat {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy3), rgba(26,111,255,0.12));
+    border: 1px solid #0056b3;
+    border-radius: 14px;
+    padding: 28px 44px;
+    text-align: center;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.3s cubic-bezier(.22,.68,0,1.2), border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .stat::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(.22,.68,0,1.2);
+  }
+
+  .stat:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: rgba(26,111,255,0.6);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+
+  .stat:hover::before { transform: scaleX(1); }
+
+  .stat-number {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(120deg, #fff 30%, var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── count-up animation ── */
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-number { animation: countUp 0.6s ease both; }
+  .stat:nth-child(2) .stat-number { animation-delay: 0.1s; }
+  .stat:nth-child(3) .stat-number { animation-delay: 0.2s; }
+  .stat:nth-child(4) .stat-number { animation-delay: 0.3s; }
+
+  /* ── card entrance ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card { animation: fadeUp 0.5s ease both; }
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.10s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.20s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.30s; }
+
+  /* ── focus styles ── */
+  .card:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+  }
+
+  /* ── reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    .showcase::before, .card, .stat-number { animation: none; }
+    .card, .stat { transition: none; }
+  }
+
+  /* ── mobile ── */
+  @media (max-width: 600px) {
+    .showcase { padding: 70px 6% 70px; }
+    .hero-sub  { margin-bottom: 48px; }
+    .stat      { padding: 22px 32px; }
+    .stat-number { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="showcase">
+
+  <div style="text-align:center">
+    <p class="eyebrow">Anti-Crime ChatBot</p>
+    <h1 class="hero-heading">
+      Protecting citizens<br>
+      <span>through smart technology</span>
+    </h1>
+    <p class="hero-sub">
+      A 24/7 AI-powered safety platform — report crimes, get emergency guidance, and stay informed.
+    </p>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🚨</span>
+      <p class="card-tag">Incident reporting</p>
+      <h3>Crime Reporting</h3>
+      <p>Submit crime reports securely with guided step-by-step assistance — no station visit needed.</p>
+    </div>
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🆘</span>
+      <p class="card-tag">Urgent help</p>
+      <h3>Emergency Support</h3>
+      <p>Instant access to emergency contacts, helplines, and real-time safety instructions.</p>
+    </div>
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">📍</span>
+      <p class="card-tag">Nearby services</p>
+      <h3>Police Locator</h3>
+      <p>Find the nearest police stations, hospitals, and public safety services in seconds.</p>
+    </div>
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🔗</span>
+      <p class="card-tag">Official resources</p>
+      <h3>Government Links</h3>
+      <p>Direct access to verified government portals, legal aid, and civic authority contacts.</p>
+    </div>
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">💡</span>
+      <p class="card-tag">Prevention</p>
+      <h3>Safety Tips</h3>
+      <p>Category-specific awareness guides and preventive measures curated for everyday situations.</p>
+    </div>
+
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🤖</span>
+      <p class="card-tag">AI assistant</p>
+      <h3>AI Assistance</h3>
+      <p>Intelligent chatbot available around the clock — understands your situation, guides your response.</p>
+    </div>
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🤖</span>
+      <p class="card-tag">AI assistant</p>
+      <h3>AI Assistance</h3>
+      <p>Intelligent chatbot available around the clock — understands your situation, guides your response.</p>
+    </div>
+    <div class="card" tabindex="0" role="article">
+      <span class="card-icon">🤖</span>
+      <p class="card-tag">AI assistant</p>
+      <h3>AI Assistance</h3>
+      <p>Intelligent chatbot available around the clock — understands your situation, guides your response.</p>
+    </div>
+
+  </div>
+
+  <div class="section-divider">
+    <span>Platform metrics</span>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Support</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">112</div>
+      <div class="stat-label">Emergency</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">8+</div>
+      <div class="stat-label">Govt links</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Secure</div>
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

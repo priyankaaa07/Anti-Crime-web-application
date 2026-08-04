@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo i {
+            font-size: 40px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hindi {
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #138808;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, #ff9933 0%, #138808 100%);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-icon i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #138808;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .service-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #138808;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .features-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+        
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #138808;
+            font-size: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature i {
+            background: #138808;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, #ff9933, #138808);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(19, 136, 8, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(19, 136, 8, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hindi {
+                font-size: 1.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <h2 style="align-items: end; background-color: blue; box-sizing: 100px;">Back</h2>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <!-- <h2 style="align-items: end; background-color: blue; box-sizing: 100px;">Back</h2> -->
+            <!-- <h1>Jan Saathi</h1> -->
+             <h1><a href="index.html">Jan Saathi</a></h1>
+            <div class="hindi">जनसाथी</div>
+            <p class="tagline">Your civic partner for reporting and resolving community issues</p>
+        </header>
+        
+        <!-- <h1><a href="index.html">Jan Saathi</a></h1> -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">1</span>Road & Infrastructure</h3>
+                    <p>Report potholes, broken streets, damaged footpaths, and missing road signs to keep your community safe.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">2</span>Water Supply Issues</h3>
+                    <p>Notify authorities about water leaks, contaminated water supply, low water pressure, and drainage problems.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">3</span>Electricity Problems</h3>
+                    <p>Report power outages, faulty street lights, exposed electrical wires, and other electricity-related issues.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-trash"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">4</span>Waste Management</h3>
+                    <p>Report garbage accumulation, missed trash collections, overflowing bins, and illegal dumping sites.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">5</span>Parks & Public Spaces</h3>
+                    <p>Notify about maintenance issues in parks, damaged public property, and need for beautification.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">6</span>Public Safety Concerns</h3>
+                    <p>Report unsafe public areas, broken manholes, dangerous buildings, and other public safety hazards.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">7</span>Transport Issues</h3>
+                    <p>Report problems with public transport, damaged bus stops, traffic signal issues, and road congestion points.</p>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">8</span>Community Support</h3>
+                    <p>Connect with local volunteers, report issues requiring community action, and join neighborhood initiatives.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features-section">
+            <h2>Why Choose Jan Saathi?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Quick and easy issue reporting</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Real-time tracking of complaint status</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Direct communication with authorities</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Photo and location evidence support</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Community engagement features</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Multi-language support</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="#" class="cta-button">Download the App Now</a>
+        </div>
+        
+        <footer>
+            <p>© 2023 Jan Saathi (जनसाथी) - Your Civic Partner</p>
+            <p>Making communities better, one issue at a time</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Hind+Siliguri:wght@500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+
+        /* .logo {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+         */
+        .logo i {
+            font-size: 40px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            /* background: linear-gradient(to right, #ff9933, #138808); */
+            background: black;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hindi {
+            font-family: 'Hind Siliguri', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #138808;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon i {
+            font-size: 50px;
+            color: white;
+        }
+
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #138808;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .service-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #138808;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .features-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #138808;
+            font-size: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature i {
+            background: #138808;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            /* background: linear-gradient(to right, #ff9933, #138808); */
+            background: linear-gradient(135deg, #1e7f83 0%, #2c3e50 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(19, 136, 8, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(19, 136, 8, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hindi {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" style="
+        background: linear-gradient(135deg, #1e7f83 0%, #2c3e50 100%);
+        padding: 15px 0;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    ">
+        <div class="container-fluid" style="
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+            <div class="logo pull-left1" style="float: left;">
+                <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: white;">
+                    <a href="index.html"
+                        style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+                        <!-- <i class="fas fa-hands-helping" style="margin-right: 10px; color: #f39c12;"></i>  -->
+
+                    </a>
+                    सुरक्षा साथी/A journey of safety
+                </h1>
+            </div>
+
+            <nav id="nav-menu-container" style="display: flex;">
+                <ul class="nav-menu" style="
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                ">
+                    <li class="menu-active" style="margin: 0 15px; position: relative;">
+                        <a href="index.html" style="
+                            color: #f39c12;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            border-bottom: 2px solid #f39c12;
+                        ">
+                            <i class="fas fa-home" style="margin-right: 5px;"></i>Home
+                        </a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="about.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-info-circle" style="margin-right: 5px;"></i>About</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="service.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-concierge-bell" style="margin-right: 5px;"></i>Services</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="portfolio.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Showcase</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="price.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-tag" style="margin-right: 5px;"></i> Links</a>
+                    </li>
+                    <li class="menu-has-children" style="margin: 0 15px; position: relative;">
+                        <a href="#" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        ">
+                            <i class="fas fa-caret-down" style="margin-right: 5px;"></i>Dropdown
+                        </a>
+                        <ul style="
+                            position: absolute;
+                            background: white;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                            border-radius: 5px;
+                            padding: 10px 0;
+                            width: 200px;
+                            top: 100%;
+                            left: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateY(10px);
+                            transition: all 0.3s ease;
+                            z-index: 1000;
+                            list-style: none;
+                        ">
+                            <li style="padding: 8px 20px;"><a href=""
+                                    style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i
+                                        class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href=""
+                                    style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i
+                                        class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href=""
+                                    style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i
+                                        class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href=""
+                                    style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i
+                                        class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href=""
+                                    style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i
+                                        class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                        </ul>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="contact.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-envelope" style="margin-right: 5px;"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- <div style="padding: 20px; max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h2>Jan Saathi Website Content</h2>
+        <p>This is a demonstration of the improved header with inline styling. The rest of your page content would go here.</p>
+        <p>Note: The dropdown menu functionality requires JavaScript to work properly. The hover effect is not functional with inline styles alone.</p>
+    </div> -->
+
+    <script>
+        // Simple JavaScript to handle dropdown menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdowns = document.querySelectorAll('.menu-has-children');
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function () {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '1';
+                    ul.style.visibility = 'visible';
+                    ul.style.transform = 'translateY(0)';
+                });
+
+                dropdown.addEventListener('mouseleave', function () {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '0';
+                    ul.style.visibility = 'hidden';
+                    ul.style.transform = 'translateY(10px)';
+                });
+            });
+
+            // Add hover effect for menu items
+            const menuItems = document.querySelectorAll('.nav-menu a');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#f39c12';
+                    }
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#fff';
+                    }
+                });
+            });
+        });
+    </script>
+    <div class="container">
+        <header>
+            <!-- <div class="logo">
+                <i class="fas fa-hands-helping" style=" width: 90px;
+            height: 90px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);"></i>
+            </div> -->
+            <!-- <h2 style="align-items: end; background-color: blue; box-sizing: 100px;">Back</h2> -->
+            <!-- <h1>Jan Saathi</h1> -->
+            <h1><a href="index.html">A journey of safety</a></h1>
+            <div class="hindi">सुरक्षा साथी </div>
+            <p class="tagline">Protect. Report. Prevent. Together, let's build a safer future.</p>
+        </header>
+
+        <!-- <h1><a href="index.html">Jan Saathi</a></h1> -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">1</span>Crime Reporting System</h3>
+                    <p>Users can anonymously report crimes with details like location, time, and description. Option to
+                        attach images or voice notes.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">2</span>Emergency SOS Alert</h3>
+                    <p>A one-tap SOS button that sends live location to emergency contacts or nearby authorities
+                        instantly.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">3</span>Nearby Police & Helpline Finder</h3>
+                    <p>Shows nearest police stations, women helplines, cybercrime cells, and emergency contacts based on
+                        user location.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-trash"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">4</span>Living History Audio Library </h3>
+                    <p>Report garbage accumulation, missed trash collections, overflowing bins, and illegal dumping
+                        sites.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">5</span>AI Chat Assistant for Safety Advice</h3>
+                    <p>Users can ask questions like “What should I do if I get harassed?” and get instant safety
+                        instructions.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">6</span>>Safety Tips & Awareness Feed</h3>
+                    <p>Daily updated tips about cyber safety, street safety, women safety, and fraud prevention.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bus"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">7</span>Nearby Safety Map</h3>
+                    <p>Helps you quickly locate police stations, hospitals, and emergency support centers during urgent
+                        situations.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="service-content">
+                    <h3><span class="service-number">8</span>Emergency Quick Links Hub</h3>
+                    <p>Provides instant access to verified emergency services and government safety portals.
+                        Designed to save time by giving one-click access to help during critical situations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2>Why Choose Suraksha Sathi</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Instant Safety Decision Support</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Designed for Real-Life Emergencies</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Easy Planning</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>One Platform for All Safety Needs</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Beginner-Friendly Interface</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <div>Faster Than Searching Manually</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="#" class="cta-button">Download the App Now</a>
+        </div>
+
+        <footer>
+            <p>© 2025 Suraksha Sathi - Your Safety Partner</p>
+            <p>Your trusted platform for crime awareness, reporting, and community safety support</p>
+        </footer>
+    </div>
+</body>
+
+</html>

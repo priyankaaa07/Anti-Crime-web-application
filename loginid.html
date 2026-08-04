@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Hospital - Patient Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom right, #e6f0ff, #f0f8ff);
+            padding: 20px;
+            overflow: auto;
+        }
+        
+        .page-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a75ff, #0047b3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 32px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 600px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(to bottom right, #1a75ff, #0047b3);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            left: -50px;
+        }
+        
+        .left-panel::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -80px;
+            right: -80px;
+        }
+        
+        .hospital-info h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hospital-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .features {
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .right-panel {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        .form-container {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .login-form {
+            width: 100%;
+        }
+        
+        .signup-form {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 40px;
+            transform: translateX(100%);
+        }
+        
+        .active-form {
+            transform: translateX(0);
+        }
+        
+        .inactive-form {
+            transform: translateX(-100%);
+        }
+        
+        .form-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .form-toggle-btn {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            color: #777;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .form-toggle-btn.active {
+            color: #0047b3;
+        }
+        
+        .form-toggle-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #0047b3;
+            border-radius: 3px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h2 {
+            color: #0047b3;
+            font-size: 26px;
+        }
+        
+        .form-header p {
+            color: #777;
+            margin-top: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #0047b3;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 71, 179, 0.2);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 5px;
+        }
+        
+        .forgot-password {
+            color: #0047b3;
+            text-decoration: none;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background: #0047b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .form-button:hover {
+            background: #003399;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            color: #777;
+            position: relative;
+        }
+        
+        .emergency-access {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .emergency-access a {
+            color: #e63946;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .emergency-access a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #e63946;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .additional-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .additional-content h2 {
+            color: #0047b3;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card i {
+            font-size: 36px;
+            color: #0047b3;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        footer {
+            background: #0047b3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 950px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .left-panel, .right-panel {
+                padding: 30px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hospital"></i>
+                <h1>MediCare Hospital</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Appointments</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="main-content">
+            <div class="container">
+                <div class="left-panel">
+                    <div class="hospital-info">
+                        <h2>Patient Portal</h2>
+                        <p>Access your medical records, schedule appointments, communicate with your healthcare team, and more through our secure patient portal.</p>
+                    </div>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-user-plus"></i>
+                            <span>New patients can register online</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Schedule appointments 24/7</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Access your medical records</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comment-medical"></i>
+                            <span>Secure messaging with your care team</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-prescription"></i>
+                            <span>Request prescription refills</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bill"></i>
+                            <span>View and pay bills online</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-panel">
+                    <div class="form-container login-form active-form" id="loginContainer">
+                        <div class="form-toggle">
+                            <button class="form-toggle-btn active" id="loginToggle">Login</button>
+                            <button class="form-toggle-btn" id="signupToggle">Sign Up</button>
+                        </div>
+                        
+                        <div class="form-header">
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to access your patient portal</p>
+                        </div>
+                        
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username">Username or Email</label>
+                                <input type="text" id="username" name="username" placeholder="Enter your username or email">
+                                <div class="error-message" id="usernameError">Please enter a valid username or email</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-container">
+                                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                                    <span class="toggle-password" id="togglePassword">
+                                        <i class="far fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="passwordError">Please enter your password</div>
+                            </div>
+                            
+                            <div class="options">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <label for="remember">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                            
+                            <button type="submit" class="form-button">Login</button>
+                            
+                            <div class="divider">
+                                <span>OR</span>
+                            </div>
+                            
+                            <div class="emergency-access">
+                                <a href="#"><i class="fas fa-ambulance"></i> Emergency Access for Healthcare Professionals</a>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="form-container signup-form inactive-form" id="signupContainer">
+                        <div class="form-toggle">
+                            <button class="form-toggle-btn" id="loginToggle2">Login</button>
+                            <button class="form-toggle-btn active" id="signupToggle2">Sign Up</button>
+                        </div>
+                        
+                        <div class="form-header">
+                            <h2>Create Account</h2>
+                            <p>Register for a new patient portal account</p>
+                        </div>
+                        
+                        <form id="signupForm">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                                <div class="error-message" id="fullnameError">Please enter your full name</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address">
+                                <div class="error-message" id="emailError">Please enter a valid email address</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                                <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="new-password">Password</label>
+                                <div class="password-container">
+                                    <input type="password" id="new-password" name="new-password" placeholder="Create a password">
+                                    <span class="toggle-password" id="togglePassword2">
+                                        <i class="far fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="newPasswordError">Password must be at least 8 characters</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <div class="password-container">
+                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+                                    <span class="toggle-password" id="togglePassword3">
+                                        <i class="far fa-eye"></i>
+                                    </span>
+                                </div>
+                                <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                            </div>
+                            
+                            <div class="options">
+                                <div class="remember-me">
+                                    <input type="checkbox" id="terms" name="terms">
+                                    <label for="terms">I agree to the Terms & Conditions</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="form-button">Create Account</button>
+                            
+                            <div class="divider">
+                                <span>OR</span>
+                            </div>
+                            
+                            <div class="emergency-access">
+                                <a href="#"><i class="fas fa-phone-alt"></i> Contact Registration Office: (555) 123-4567</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="additional-content">
+            <h2>Our Medical Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Cardiology</h3>
+                    <p>Comprehensive heart health services and treatments</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>Pediatrics</h3>
+                    <p>Specialized care for children of all ages</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurology</h3>
+                    <p>Treatment for disorders of the nervous system</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bone"></i>
+                    <h3>Orthopedics</h3>
+                    <p>Care for bones, joints, and musculoskeletal system</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 MediCare Hospital. All rights reserved.</p>
+            <p>123 Healthcare Avenue, Medical Center, CA 94321 | Phone: (555) 123-4567</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const loginContainer = document.getElementById('loginContainer');
+            const signupContainer = document.getElementById('signupContainer');
+            const loginToggle = document.getElementById('loginToggle');
+            const signupToggle = document.getElementById('signupToggle');
+            const loginToggle2 = document.getElementById('loginToggle2');
+            const signupToggle2 = document.getElementById('signupToggle2');
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const togglePassword = document.getElementById('togglePassword');
+            const togglePassword2 = document.getElementById('togglePassword2');
+            const togglePassword3 = document.getElementById('togglePassword3');
+            
+            // Toggle between login and signup forms
+            function showLoginForm() {
+                loginContainer.classList.remove('inactive-form');
+                loginContainer.classList.add('active-form');
+                signupContainer.classList.remove('active-form');
+                signupContainer.classList.add('inactive-form');
+                
+                loginToggle.classList.add('active');
+                signupToggle.classList.remove('active');
+                loginToggle2.classList.add('active');
+                signupToggle2.classList.remove('active');
+            }
+            
+            function showSignupForm() {
+                signupContainer.classList.remove('inactive-form');
+                signupContainer.classList.add('active-form');
+                loginContainer.classList.remove('active-form');
+                loginContainer.classList.add('inactive-form');
+                
+                signupToggle.classList.add('active');
+                loginToggle.classList.remove('active');
+                signupToggle2.classList.add('active');
+                loginToggle2.classList.remove('active');
+            }
+            
+            // Add event listeners for form toggles
+            loginToggle.addEventListener('click', showLoginForm);
+            signupToggle.addEventListener('click', showSignupForm);
+            loginToggle2.addEventListener('click', showLoginForm);
+            signupToggle2.addEventListener('click', showSignupForm);
+            
+            // Toggle password visibility
+            function setupPasswordToggle(toggleElement, passwordFieldId) {
+                toggleElement.addEventListener('click', function() {
+                    const passwordInput = document.getElementById(passwordFieldId);
+                    const icon = toggleElement.querySelector('i');
+                    
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            }
+            
+            setupPasswordToggle(togglePassword, 'password');
+            setupPasswordToggle(togglePassword2, 'new-password');
+            setupPasswordToggle(togglePassword3, 'confirm-password');
+            
+            // Form validation
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Validate username
+                const username = document.getElementById('username');
+                const usernameError = document.getElementById('usernameError');
+                if (username.value.trim() === '') {
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    usernameError.style.display = 'none';
+                }
+                
+                // Validate password
+                const password = document.getElementById('password');
+                const passwordError = document.getElementById('passwordError');
+                if (password.value === '') {
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    passwordError.style.display = 'none';
+                }
+                
+                if (isValid) {
+                    alert('Login successful! Redirecting to your dashboard...');
+                    // In a real application, you would redirect the user
+                    // window.location.href = 'dashboard.html';
+                }
+            });
+            
+            signupForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                
+                // Validate full name
+                const fullname = document.getElementById('fullname');
+                const fullnameError = document.getElementById('fullnameError');
+                if (fullname.value.trim() === '') {
+                    fullnameError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    fullnameError.style.display = 'none';
+                }
+                
+                // Validate email
+                const email = document.getElementById('email');
+                const emailError = document.getElementById('emailError');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value)) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                }
+                
+                // Validate password
+                const newPassword = document.getElementById('new-password');
+                const newPasswordError = document.getElementById('newPasswordError');
+                if (newPassword.value.length < 8) {
+                    newPasswordError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    newPasswordError.style.display = 'none';
+                }
+                
+                // Validate confirm password
+                const confirmPassword = document.getElementById('confirm-password');
+                const confirmPasswordError = document.getElementById('confirmPasswordError');
+                if (confirmPassword.value !== newPassword.value) {
+                    confirmPasswordError.style.display = 'block';
+                    isValid = false;
+                } else {
+                    confirmPasswordError.style.display = 'none';
+                }
+                
+                if (isValid) {
+                    alert('Account created successfully! Please check your email for verification.');
+                    showLoginForm();
+                }
+            });
+            
+            // Clear error messages when user starts typing
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const errorElement = document.getElementById(this.id + 'Error');
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

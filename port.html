@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Section | Jan Saathi App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .portfolio-container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 2.8rem;
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .filter-btn {
+            padding: 12px 25px;
+            background: #f1f1f1;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        .filter-btn.active {
+            background: #2575fc;
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #6a89cc, #4a69bd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        .portfolio-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2575fc;
+        }
+        
+        .portfolio-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-tag {
+            background: #f1f1f1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .portfolio-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2575fc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            background: #1a60c0;
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .portfolio-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-header p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .portfolio-container {
+                padding: 20px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <div class="portfolio-header">
+            <h1>My Portfolio</h1>
+            <p>A showcase of my recent projects and creative works. Each project represents my passion for design and development.</p>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Web Design</button>
+            <button class="filter-btn">Mobile Apps</button>
+            <button class="filter-btn">UI/UX</button>
+            <button class="filter-btn">Branding</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Jan Saathi App</h3>
+                    <p>A community app designed to connect people and provide essential services.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Mobile</span>
+                        <span class="portfolio-tag">React Native</span>
+                        <span class="portfolio-tag">UI/UX</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img" style="background: linear-gradient(45deg, #fd746c, #ff9068);">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-featured online shopping platform with payment integration.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Web</span>
+                        <span class="portfolio-tag">React</span>
+                        <span class="portfolio-tag">Node.js</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img" style="background: linear-gradient(45deg, #3a7bd5, #00d2ff);">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete brand identity package for a tech startup.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Branding</span>
+                        <span class="portfolio-tag">Illustration</span>
+                        <span class="portfolio-tag">Logo</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 4 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img" style="background: linear-gradient(45deg, #56ab2f, #a8e063);">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Analytics Dashboard</h3>
+                    <p>Real-time data visualization for business metrics.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Web App</span>
+                        <span class="portfolio-tag">Data Viz</span>
+                        <span class="portfolio-tag">React</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 5 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img" style="background: linear-gradient(45deg, #8e2de2, #4a00e0);">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Photo Editing App</h3>
+                    <p>Mobile application for photo editing with advanced filters.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Mobile</span>
+                        <span class="portfolio-tag">iOS</span>
+                        <span class="portfolio-tag">Android</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+            
+            <!-- Portfolio Item 6 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img" style="background: linear-gradient(45deg, #f5576c, #f093fb);">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="portfolio-content">
+                    <h3>Responsive Website</h3>
+                    <p>Company website with fully responsive design.</p>
+                    <div class="portfolio-tags">
+                        <span class="portfolio-tag">Web Design</span>
+                        <span class="portfolio-tag">HTML/CSS</span>
+                        <span class="portfolio-tag">JavaScript</span>
+                    </div>
+                    <a href="#" class="portfolio-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // In a real app, you would filter the portfolio items here
+                    // For this example, we'll just log the filter category
+                    console.log('Filtering by: ' + this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

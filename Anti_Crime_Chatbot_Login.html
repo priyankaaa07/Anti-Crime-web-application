@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anti Crime Chatbot - Login & Sign Up</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+body{
+background:linear-gradient(135deg,#0b3d91 0%,#1e5aa8 60%,#ffffff 100%);
+min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.container{
+background:white;border-radius:20px;border-top:5px solid #ff9933;
+box-shadow:0 15px 35px rgba(0,0,0,.15);overflow:hidden;width:100%;max-width:450px}
+.header{
+background:linear-gradient(135deg,#0b3d91,#1e5aa8);
+color:white;padding:30px 20px;text-align:center;position:relative}
+.logo{font-size:2.5rem;margin-bottom:10px}
+.app-name{font-size:1.5rem;font-weight:600}
+.app-subtitle{font-size:.9rem;opacity:.9;margin-top:5px}
+.language-switcher{position:absolute;top:20px;right:20px}
+.lang-btn{background:rgba(255,255,255,.2);border:none;color:white;padding:8px 15px;border-radius:20px;cursor:pointer}
+.form-container{padding:30px}
+.form-toggle{display:flex;background:#f5f5f5;border-radius:10px;padding:5px;margin-bottom:25px}
+.toggle-btn{flex:1;padding:12px;border:none;background:transparent;border-radius:8px;cursor:pointer;font-weight:600}
+.toggle-btn.active{background:white;color:#0b3d91}
+.form{display:none}.form.active{display:block}
+.form-group{margin-bottom:20px}
+label{display:block;margin-bottom:8px;color:#555;font-weight:500}
+input{width:100%;padding:12px 15px;border:2px solid #e1e1e1;border-radius:10px}
+input:focus{outline:none;border-color:#0b3d91}
+.submit-btn{width:100%;padding:12px;background:linear-gradient(135deg,#0b3d91,#1e5aa8);color:white;border:none;border-radius:10px;cursor:pointer}
+.links{text-align:center;margin-top:20px}
+.link{color:#0b3d91;text-decoration:none}
+.name-fields{display:flex;gap:10px}
+.name-fields .form-group{flex:1}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="logo">🛡️</div>
+<div class="app-name">Anti Crime Chatbot</div>
+<div class="app-subtitle">Smart Crime Reporting & Safety Assistance</div>
+</div>
+
+<div class="form-container">
+<div class="form-toggle">
+<button class="toggle-btn active" onclick="showForm('login')">Login</button>
+<button class="toggle-btn" onclick="showForm('signup')">Register</button>
+</div>
+
+<form id="loginForm" class="form active">
+<div class="form-group">
+<label>Registered Email or Mobile Number</label>
+<input type="text" placeholder="Enter registered email or mobile number">
+</div>
+
+<div class="form-group">
+<label>Password</label>
+<input type="password" placeholder="Enter your password">
+</div>
+
+<button type="submit" class="submit-btn">Login</button>
+
+<div class="links">
+<a href="#" class="link">Forgot Password / Reset Account</a>
+</div>
+</form>
+
+<form id="signupForm" class="form">
+<div class="name-fields">
+<div class="form-group">
+<label>First Name</label>
+<input type="text" placeholder="Enter first name">
+</div>
+<div class="form-group">
+<label>Last Name</label>
+<input type="text" placeholder="Enter last name">
+</div>
+</div>
+
+<div class="form-group">
+<label>Official Email Address</label>
+<input type="email" placeholder="Enter email">
+</div>
+
+<div class="form-group">
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter mobile number">
+</div>
+
+<div class="form-group">
+<label>Create Secure Password</label>
+<input type="password" placeholder="Create password">
+</div>
+
+<div class="form-group">
+<label>Confirm Secure Password</label>
+<input type="password" placeholder="Confirm password">
+</div>
+
+<button type="submit" class="submit-btn">Register Account</button>
+</form>
+</div>
+</div>
+
+<script>
+function showForm(type){
+document.querySelectorAll('.form').forEach(f=>f.classList.remove('active'));
+document.querySelectorAll('.toggle-btn').forEach(b=>b.classList.remove('active'));
+document.getElementById(type+'Form').classList.add('active');
+event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Improved Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Your original header code with inline styling improvements -->
+    <header class="header" style="
+        background: linear-gradient(135deg, #1e7f83 0%, #2c3e50 100%);
+        padding: 15px 0;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    ">
+        <div class="container-fluid" style="
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+            <div class="logo pull-left" style="float: left;">
+                <h1 style="margin: 0; font-size: 24px; font-weight: 700;">
+                    <a href="index.html" style="color: #fff; text-decoration: none; display: flex; align-items: center;">
+                        <i class="fas fa-hands-helping" style="margin-right: 10px; color: #f39c12;"></i>
+                        जनसाथी / People's Companion
+                    </a> 
+                </h1>
+            </div>
+
+            <nav id="nav-menu-container" style="display: flex;">
+                <ul class="nav-menu" style="
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                ">
+                    <li class="menu-active" style="margin: 0 15px; position: relative;">
+                        <a href="index.html" style="
+                            color: #f39c12;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            border-bottom: 2px solid #f39c12;
+                        ">
+                            <i class="fas fa-home" style="margin-right: 5px;"></i>Home
+                        </a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="about.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-info-circle" style="margin-right: 5px;"></i>About</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="service.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-concierge-bell" style="margin-right: 5px;"></i>Services</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="portfolio.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-briefcase" style="margin-right: 5px;"></i>Portfolio</a>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="price.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-tag" style="margin-right: 5px;"></i>Price</a>
+                    </li>
+                    <li class="menu-has-children" style="margin: 0 15px; position: relative;">
+                        <a href="#" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        ">
+                            <i class="fas fa-caret-down" style="margin-right: 5px;"></i>Dropdown
+                        </a>
+                        <ul style="
+                            position: absolute;
+                            background: white;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                            border-radius: 5px;
+                            padding: 10px 0;
+                            width: 200px;
+                            top: 100%;
+                            left: 0;
+                            opacity: 0;
+                            visibility: hidden;
+                            transform: translateY(10px);
+                            transition: all 0.3s ease;
+                            z-index: 1000;
+                            list-style: none;
+                        ">
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                            <li style="padding: 8px 20px;"><a href="" style="color: #333; text-decoration: none; display: block; font-size: 14px;"><i class="fas fa-angle-right" style="margin-right: 5px;"></i>Dropdown Menu</a></li>
+                        </ul>
+                    </li>
+                    <li style="margin: 0 15px;">
+                        <a href="contact.html" style="
+                            color: #fff;
+                            text-decoration: none;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding: 10px 5px;
+                            display: block;
+                            transition: color 0.3s;
+                        "><i class="fas fa-envelope" style="margin-right: 5px;"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div style="padding: 20px; max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h2>Jan Saathi Website Content</h2>
+        <p>This is a demonstration of the improved header with inline styling. The rest of your page content would go here.</p>
+        <p>Note: The dropdown menu functionality requires JavaScript to work properly. The hover effect is not functional with inline styles alone.</p>
+    </div>
+
+    <script>
+        // Simple JavaScript to handle dropdown menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.menu-has-children');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '1';
+                    ul.style.visibility = 'visible';
+                    ul.style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    const ul = this.querySelector('ul');
+                    ul.style.opacity = '0';
+                    ul.style.visibility = 'hidden';
+                    ul.style.transform = 'translateY(10px)';
+                });
+            });
+            
+            // Add hover effect for menu items
+            const menuItems = document.querySelectorAll('.nav-menu a');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#f39c12';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    if (!this.parentElement.classList.contains('menu-active')) {
+                        this.style.color = '#fff';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO GREEN - Community Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2d3436;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(120deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #27ae60;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card h3 {
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            background: #dfe6e9;
+            color: #2d3436;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #219653;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            background: #2d3436;
+            color: white;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #27ae60;
+        }
+        
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li i {
+            margin-right: 10px;
+            color: #27ae60;
+        }
+        
+        .subscription input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .subscription .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            background: #1e272e;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GO GREEN</h1>
+            <p>Connecting communities for a sustainable future</p>
+        </header>
+        
+        <section class="features">
+            <div class="feature-card">
+                <h3>Community Connect</h3>
+                <p>Platform for local communities to share resources and support each other.</p>
+                <div class="tags">
+                    <span class="tag">Social</span>
+                    <span class="tag">Community</span>
+                    <span class="tag">Networking</span>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Resource Sharing</h3>
+                <p>A system for sharing resources within communities to reduce waste and help those in need.</p>
+                <div class="tags">
+                    <span class="tag">Sustainability</span>
+                    <span class="tag">Sharing Economy</span>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Community Events</h3>
+                <p>Event management system for local community gatherings and activities.</p>
+                <div class="tags">
+                    <span class="tag">Events</span>
+                    <span class="tag">Management</span>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Local Forum</h3>
+                <p>Discussion platform for community members to share ideas and solve local issues.</p>
+                <div class="tags">
+                    <span class="tag">Forum</span>
+                    <span class="tag">Discussion</span>
+                </div>
+                <a href="#" class="btn">View Project</a>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GO GREEN</h3>
+                    <p>Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Eiam a tortor commodo, sollicitudin velit nec, lobortis erat. Sed rutrum metus ac augue scelerisque, vel commodo erat.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ABOUT US</h3>
+                    <ul>
+                        <li><i class="fas fa-home"></i> Home</li>
+                        <li><i class="fas fa-info-circle"></i> About us</li>
+                        <li><i class="fas fa-concierge-bell"></i> Our services</li>
+                        <li><i class="fas fa-file-contract"></i> Terms & condition</li>
+                        <li><i class="fas fa-shield-alt"></i> Privacy policy</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>CONTACT US</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Your Location</li>
+                        <li><i class="fas fa-city"></i> Your City</li>
+                        <li><i class="fas fa-globe"></i> Your Country</li>
+                        <li><i class="fas fa-phone"></i> Phone: +123-456-7890</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section subscription">
+                    <h3>SUBSCRIPTION</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    <input type="email" placeholder="Your email address">
+                    <a href="#" class="btn">Subscribe</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 GO GREEN Community Platform. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

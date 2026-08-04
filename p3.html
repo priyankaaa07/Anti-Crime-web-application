@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Portfolio Section - Self-contained styles with unique namespace */
+        #jan-saathi-portfolio * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        #jan-saathi-portfolio {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #jan-saathi-portfolio .portfolio-container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 30px;
+        }
+        
+        #jan-saathi-portfolio .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        #jan-saathi-portfolio .app-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        #jan-saathi-portfolio .hindi-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2575fc;
+            margin-right: 15px;
+        }
+        
+        #jan-saathi-portfolio .english-text {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        #jan-saathi-portfolio .portfolio-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        #jan-saathi-portfolio .portfolio-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        #jan-saathi-portfolio .stat-item {
+            padding: 20px;
+            min-width: 200px;
+        }
+        
+        #jan-saathi-portfolio .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2575fc;
+            margin-bottom: 10px;
+        }
+        
+        #jan-saathi-portfolio .stat-label {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        
+        #jan-saathi-portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        #jan-saathi-portfolio .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        #jan-saathi-portfolio .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        #jan-saathi-portfolio .portfolio-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #6a89cc, #4a69bd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #jan-saathi-portfolio .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #jan-saathi-portfolio .img-placeholder {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        #jan-saathi-portfolio .portfolio-content {
+            padding: 20px;
+        }
+        
+        #jan-saathi-portfolio .portfolio-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2575fc;
+        }
+        
+        #jan-saathi-portfolio .portfolio-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        #jan-saathi-portfolio .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        #jan-saathi-portfolio .portfolio-tag {
+            background: #f1f1f1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        #jan-saathi-portfolio .portfolio-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2575fc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        
+        #jan-saathi-portfolio .portfolio-link:hover {
+            background: #1a60c0;
+        }
+        
+        #jan-saathi-portfolio .impact-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        #jan-saathi-portfolio .impact-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        #jan-saathi-portfolio .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        #jan-saathi-portfolio .impact-item {
+            padding: 20px;
+            min-width: 200px;
+        }
+        
+        #jan-saathi-portfolio .impact-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        #jan-saathi-portfolio .impact-label {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            #jan-saathi-portfolio .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            #jan-saathi-portfolio .hindi-text {
+                font-size: 2.5rem;
+            }
+            
+            #jan-saathi-portfolio .english-text {
+                font-size: 1.8rem;
+            }
+            
+            #jan-saathi-portfolio .portfolio-header p {
+                font-size: 1rem;
+            }
+            
+            #jan-saathi-portfolio .stat-item, 
+            #jan-saathi-portfolio .impact-item {
+                min-width: 150px;
+                padding: 15px;
+            }
+            
+            #jan-saathi-portfolio .stat-number, 
+            #jan-saathi-portfolio .impact-number {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #jan-saathi-portfolio .portfolio-container {
+                padding: 20px;
+            }
+            
+            #jan-saathi-portfolio .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #jan-saathi-portfolio .app-title {
+                flex-direction: column;
+            }
+            
+            #jan-saathi-portfolio .hindi-text {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            #jan-saathi-portfolio .stat-item, 
+            #jan-saathi-portfolio .impact-item {
+                min-width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Portfolio Section with unique ID for scoping -->
+    <section id="jan-saathi-portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <div class="app-title">
+                    <h1 class="hindi-text">जनसाथी</h1>
+                    <h1 class="english-text">Jan Saathi</h1>
+                </div>
+                <p>Our portfolio showcases the impact we've made in communities through technology and social innovation.</p>
+            </div>
+            
+            <div class="portfolio-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Communities Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Partnerships</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-hands-helping"></i> -->
+                            <!-- <p>Community Connect</p> -->
+                        </div>
+                        <!-- In a real app, you would use an actual image: -->
+                        <img src="portfolio1.1.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Community Connect</h3>
+                        <p>Platform for local communities to share resources and support each other.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Social</span>
+                            <span class="portfolio-tag">Community</span>
+                            <span class="portfolio-tag">Networking</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: linear-gradient(45deg, #fd746c, #ff9068);">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-hand-holding-heart"></i>
+                            <p>Resource Sharing</p> -->
+                        </div>
+                        <img src="portfolio1.2.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Resource Sharing</h3>
+                        <p>A system for sharing resources within communities to reduce waste and help those in need.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Sustainability</span>
+                            <span class="portfolio-tag">Sharing Economy</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: linear-gradient(45deg, #3a7bd5, #00d2ff);">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-calendar-check"></i>
+                            <p>Community Events</p> -->
+                        </div>
+                        <img src="portfolio_image2.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Community Events</h3>
+                        <p>Event management system for local community gatherings and activities.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Events</span>
+                            <span class="portfolio-tag">Management</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: linear-gradient(45deg, #56ab2f, #a8e063);">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-comments"></i>
+                            <p>Local Forum</p> -->
+                        </div>
+                        <img src="portfolio_image3.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Local Forum</h3>
+                        <p>Discussion platform for community members to share ideas and solve local issues.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Forum</span>
+                            <span class="portfolio-tag">Discussion</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: linear-gradient(45deg, #8e2de2, #4a00e0);">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-store"></i>
+                            <p>Local Business Hub</p> -->
+                        </div>
+                        <img src="portfolio_image4.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Local Business Hub</h3>
+                        <p>Platform to promote and support local businesses within communities.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Business</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: linear-gradient(45deg, #f5576c, #f093fb);">
+                        <div class="img-placeholder">
+                            <!-- <i class="fas fa-hands"></i>
+                            <p>Volunteer Network</p> -->
+                        </div>
+                        <img src="portfolio_image6.png" alt="Community Connect">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Volunteer Network</h3>
+                        <p>Connecting volunteers with community projects that need support.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Volunteering</span>
+                            <span class="portfolio-tag">Social Work</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-section">
+                <h2 class="impact-title">Our Impact</h2>
+                <div class="impact-stats">
+                    <div class="impact-item">
+                        <div class="impact-number">75%</div>
+                        <div class="impact-label">Increased Community Engagement</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">500+</div>
+                        <div class="impact-label">Local Issues Resolved</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">1.2M</div>
+                        <div class="impact-label">Resources Shared</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple animation for stats counting
+        document.addEventListener('DOMContentLoaded', function() {
+            const statElements = document.querySelectorAll('#jan-saathi-portfolio .stat-number, #jan-saathi-portfolio .impact-number');
+            
+            statElements.forEach(element => {
+                const originalText = element.textContent;
+                element.textContent = '0';
+                
+                let counter = 0;
+                const target = originalText.replace(/[+,%]/g, '');
+                const increment = target / 30;
+                
+                const updateNumber = () => {
+                    if (counter < target) {
+                        counter += increment;
+                        element.textContent = Math.round(counter) + originalText.replace(/[0-9]/g, '');
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        element.textContent = originalText;
+                    }
+                };
+                
+                setTimeout(updateNumber, 500);
+            });
+        });
+    </script>
+</body>
+</html>

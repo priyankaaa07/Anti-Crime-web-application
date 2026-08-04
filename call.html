@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Saathi - Call to Action</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .cta-container {
+            max-width: 1000px;
+            width: 100%;
+            background: linear-gradient(135deg, #1a75ff 0%, #0047b3 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+        
+        .cta-content {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cta-button.primary {
+            background: white;
+            color: #0047b3;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+        
+        .cta-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #ffcc00;
+        }
+        
+        .feature-text {
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cta-content {
+                padding: 30px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-description {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .cta-features {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cta-container">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Make a Difference in Your Community?</h2>
+            <p class="cta-description">Join thousands of active citizens who are using Jan Saathi to report issues, track resolutions, and create cleaner, safer neighborhoods. Download our app today and become a community champion!</p>
+            
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary">
+                    <i class="fas fa-download"></i> Download the App
+                </a>
+                <a href="#" class="cta-button secondary">
+                    <i class="fas fa-globe"></i> Use Web Version
+                </a>
+            </div>
+            
+            <div class="cta-features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="feature-text">Secure & Private</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <div class="feature-text">Quick & Easy</div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <div class="feature-text">Community Powered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple hover effect enhancement
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Call-to-Action</title>
+    <link rel="stylesheet" href="cta-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <section class="call-to-action">
+        <div class="container text-center">
+            <header class="section-header">
+                <h3>Ready to Transform Your Community?</h3>
+                <p>
+                    Join thousands of active citizens using Jan Saathi to report issues, track resolutions, and create cleaner, safer neighborhoods. Download our app today and become a community champion!
+                </p>
+            </header>
+            <div class="cta-buttons">
+                <a class="cta-btn primary" href="#">
+                    <i class="fas fa-download"></i> Download App
+                </a>
+                <a class="cta-btn secondary" href="#">
+                    <i class="fas fa-globe"></i> Use Web Version
+                </a>
+            </div>
+            <div class="cta-features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure & Private</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Quick & Easy</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <span>Community Powered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="cta-script.js"></script>
+</body>
+</html>

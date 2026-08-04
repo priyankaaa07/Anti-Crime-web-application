@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column Footer - GO GREEN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            max-height: 700px;
+            /* margin: 40px auto; */
+            background: white;
+            /* border-radius: 10px; */
+            /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); */
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2ecc71;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .footer-top {
+            padding-bottom: 30px;
+        }
+        
+        .footer-section {
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-info h3 {
+            color: #2ecc71;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .footer-info p {
+            line-height: 1.6;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-newsletter h4 {
+            color: #2ecc71;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-links a:hover {
+            color: #2ecc71;
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #34495e;
+            border-radius: 50%;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #2ecc71;
+            transform: translateY(-3px);
+        }
+        
+        .footer-newsletter form {
+            display: flex;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .footer-newsletter input[type="email"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+        }
+        
+        .footer-newsletter input[type="submit"] {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .footer-newsletter input[type="submit"]:hover {
+            background: #27ae60;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            margin-top: 20px;
+        }
+        
+        .copyright a {
+            color: #2ecc71;
+            text-decoration: none;
+        }
+        
+        .copyright a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-sections {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .footer-section {
+                flex: 0 0 48%;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .footer-section {
+                flex: 0 0 23%;
+            }
+            
+            .footer-sections {
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-sections">
+                    <div class="footer-section footer-info">
+                        <h3>GO GREEN</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a tortor commodo, sollicitudin velit nec, lobortis erat. Sed rutrum metus ac augue scelerisque, vel commodo erat commodo.
+                        </p>
+                    </div>
+
+                    <div class="footer-section footer-links">
+                        <h4>About Us</h4>
+                        <ul>
+                            <li><i class="ion-md-arrow-dropright"></i> <a href="#">Home</a></li>
+                            <li><i class="ion-md-arrow-dropright"></i> <a href="#">About us</a></li>
+                            <li><i class="ion-md-arrow-dropright"></i> <a href="#">Our services</a></li>
+                            <li><i class="ion-md-arrow-dropright"></i> <a href="#">Terms & condition</a></li>
+                            <li><i class="ion-md-arrow-dropright"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            Your Location<br>
+                            Your City<br>
+                            Your Country <br>
+                            <strong>Phone:</strong> +123-456-7890<br>
+                            <strong>Email:</strong> info@example.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="https://freewebsitecode.com/"><i class="ion-logo-twitter"></i></a>
+                            <a href="https://facebook.com/freewebsitecode/"><i class="ion-logo-facebook"></i></a>
+                            <a href="https://freewebsitecode.com/"><i class="ion-logo-linkedin"></i></a>
+                            <a href="https://freewebsitecode.com/"><i class="ion-logo-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UC9HlQRmKgG3jeVD_fBxj1Pw/videos"><i class="ion-logo-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section footer-newsletter">
+                        <h4>Subscription</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email" placeholder="Your email address">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; Copyright <a href="https://freewebsitecode.com/">Your Site Name</a>. All Rights Reserved<br>
+                Template By <a href="https://sudeep-portfolio.netlify.app">@SudeepAcharjee</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

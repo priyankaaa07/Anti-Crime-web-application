@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharshanik Yatra - Login & Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .app-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-container {
+            padding: 30px;
+        }
+
+        .form-toggle {
+            display: flex;
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 25px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            color: #4CAF50;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #888;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e1e1e1;
+            z-index: 1;
+        }
+
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .social-btn:hover {
+            border-color: #4CAF50;
+            background: #f8fff8;
+        }
+
+        .hindi {
+            display: none;
+        }
+
+        .show-hindi .english {
+            display: none;
+        }
+
+        .show-hindi .hindi {
+            display: block;
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 10px;
+        }
+
+        .name-fields .form-group {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-switcher">
+                <button class="lang-btn" onclick="toggleLanguage()">
+                    <span class="english">हिन्दी</span>
+                    <span class="hindi">English</span>
+                </button>
+            </div>
+            <div class="logo">🛕</div>
+            <div class="app-name english">Dharshanik Yatra</div>
+            <div class="app-name hindi">धार्षानिक यात्रा</div>
+            <div class="app-subtitle english">Your Spiritual Journey Companion</div>
+            <div class="app-subtitle hindi">आपका आध्यात्मिक यात्रा साथी</div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-toggle">
+                <button class="toggle-btn active" onclick="showForm('login')">
+                    <span class="english">Login</span>
+                    <span class="hindi">लॉग इन</span>
+                </button>
+                <button class="toggle-btn" onclick="showForm('signup')">
+                    <span class="english">Sign Up</span>
+                    <span class="hindi">साइन अप</span>
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form active">
+                <div class="form-group">
+                    <label class="english">Email or Phone</label>
+                    <label class="hindi">ईमेल या फोन नंबर</label>
+                    <input type="text" placeholder="Enter your email or phone" class="english">
+                    <input type="text" placeholder="अपना ईमेल या फोन नंबर दर्ज करें" class="hindi">
+                </div>
+
+                <div class="form-group">
+                    <label class="english">Password</label>
+                    <label class="hindi">पासवर्ड</label>
+                    <input type="password" placeholder="Enter your password" class="english">
+                    <input type="password" placeholder="अपना पासवर्ड दर्ज करें" class="hindi">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="english">Login</span>
+                    <span class="hindi">लॉग इन करें</span>
+                </button>
+
+                <div class="links">
+                    <a href="#" class="link english">Forgot Password?</a>
+                    <a href="#" class="link hindi">पासवर्ड भूल गए?</a>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="form">
+                <div class="name-fields">
+                    <div class="form-group">
+                        <label class="english">First Name</label>
+                        <label class="hindi">पहला नाम</label>
+                        <input type="text" placeholder="Enter first name" class="english">
+                        <input type="text" placeholder="पहला नाम दर्ज करें" class="hindi">
+                    </div>
+                    <div class="form-group">
+                        <label class="english">Last Name</label>
+                        <label class="hindi">अंतिम नाम</label>
+                        <input type="text" placeholder="Enter last name" class="english">
+                        <input type="text" placeholder="अंतिम नाम दर्ज करें" class="hindi">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="english">Email</label>
+                    <label class="hindi">ईमेल</label>
+                    <input type="email" placeholder="Enter your email" class="english">
+                    <input type="email" placeholder="अपना ईमेल दर्ज करें" class="hindi">
+                </div>
+
+                <div class="form-group">
+                    <label class="english">Phone Number</label>
+                    <label class="hindi">फोन नंबर</label>
+                    <input type="tel" placeholder="Enter phone number" class="english">
+                    <input type="tel" placeholder="फोन नंबर दर्ज करें" class="hindi">
+                </div>
+
+                <div class="form-group">
+                    <label class="english">Password</label>
+                    <label class="hindi">पासवर्ड</label>
+                    <input type="password" placeholder="Create a password" class="english">
+                    <input type="password" placeholder="पासवर्ड बनाएं" class="hindi">
+                </div>
+
+                <div class="form-group">
+                    <label class="english">Confirm Password</label>
+                    <label class="hindi">पासवर्ड की पुष्टि करें</label>
+                    <input type="password" placeholder="Confirm your password" class="english">
+                    <input type="password" placeholder="पासवर्ड की पुष्टि करें" class="hindi">
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="english">Create Account</span>
+                    <span class="hindi">खाता बनाएं</span>
+                </button>
+
+                <div class="links">
+                    <span class="english">By signing up, you agree to our </span>
+                    <span class="hindi">साइन अप करके, आप हमारी </span>
+                    <a href="#" class="link english">Terms & Conditions</a>
+                    <a href="#" class="link hindi">नियम और शर्तों</a>
+                    <span class="hindi"> से सहमत होते हैं</span>
+                </div>
+            </form>
+
+            <div class="divider">
+                <span class="english">or continue with</span>
+                <span class="hindi">या जारी रखें</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn" onclick="loginWithOTP()">
+                    <span>📱</span>
+                    <span class="english">OTP Login</span>
+                    <span class="hindi">OTP लॉगिन</span>
+                </button>
+                <button class="social-btn" onclick="loginWithGoogle()">
+                    <span>G</span>
+                    <span class="english">Google</span>
+                    <span class="hindi">गूगल</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('show-hindi');
+            
+            const langBtn = document.querySelector('.lang-btn');
+            if (document.body.classList.contains('show-hindi')) {
+                langBtn.innerHTML = '<span class="english">English</span><span class="hindi">अंग्रेज़ी</span>';
+            } else {
+                langBtn.innerHTML = '<span class="english">हिन्दी</span><span class="hindi">Hindi</span>';
+            }
+        }
+
+        function showForm(formType) {
+            // Update toggle buttons
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Show selected form
+            document.querySelectorAll('.form').forEach(form => {
+                form.classList.remove('active');
+            });
+            document.getElementById(formType + 'Form').classList.add('active');
+        }
+
+        // Form submissions
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login functionality to be implemented');
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Sign up functionality to be implemented');
+        });
+
+        function loginWithOTP() {
+            alert('OTP login to be implemented');
+        }
+
+        function loginWithGoogle() {
+            alert('Google login to be implemented');
+        }
+    </script>
+</body>
+</html>
