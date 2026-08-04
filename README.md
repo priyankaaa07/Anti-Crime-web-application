@@ -1,4 +1,31 @@
+# 🚔 AI Anti-Crime Web Application
+
+An AI-powered web application designed to simplify crime reporting and improve public safety. The platform enables users to report crimes, track complaint status, and interact with an AI chatbot for instant assistance. It provides a secure and user-friendly interface for both citizens and administrators.
+
+## 📌 Features
+
+- 🔐 Secure User Registration & Login
+- 🤖 AI Chatbot for Crime Assistance
+- 📝 Online Crime Reporting
+- 📍 Complaint Status Tracking
+- 🚨 Emergency Contact Information
+- 👨‍💼 Admin Dashboard for Complaint Management
+- 📱 Responsive User Interface
+- 🛡️ Secure Authentication & Data Validation
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
+
+**Backend**
+- Java (JDBC / Servlets)
+
+**Database**
 - MySQL
+  
 **Tools**
 - VS Code
 - XAMPP / MySQL Workbench
