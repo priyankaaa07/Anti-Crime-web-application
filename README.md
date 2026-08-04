@@ -35,6 +35,6 @@ Anti-Crime-Web-Application/
 - Police dashboard with analytics
 ## 👩‍💻 Author
 **Priyanka** 
-**Ayush Kumar Dubey**
+** & Ayush Kumar Dubey**
 ---
 ⭐ If you found this project helpful, don't forget to star the repository!
