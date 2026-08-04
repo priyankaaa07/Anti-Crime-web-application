@@ -34,7 +34,8 @@ Anti-Crime-Web-Application/
 - AI-based crime prediction
 - Police dashboard with analytics
 ## 👩‍💻 Author
-**Priyanka & Ayush Kumar Dubey** 
+- **Priyanka**
+- **Ayush Kumar Dubey**
 
 ---
 ⭐ If you found this project helpful, don't forget to star the repository!
